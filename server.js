@@ -69,7 +69,7 @@ app.post('/api/print', (req, res) => {
         from: MAIL_FROM,
         to: PRINTER_EMAIL,
         subject: 'Documento para impressão',
-        text: 'Segue em anexo o arquivo enviado pelo sistema de impressão.',
+        text: '',
         attachments: [{ filename: safeName(file.originalname), content: file.buffer, contentType: file.mimetype }]
       });
       return res.status(200).json({ message: 'Arquivo enviado para impressão com sucesso!' });
