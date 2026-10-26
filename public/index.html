@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Envie documentos para sua impressora Epson Connect." />
+    <title>Imprimir documento</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="card">
+      <div class="brand"><span class="brand-mark" aria-hidden="true">▣</span> impressão simples</div>
+      <h1>Imprimir documento</h1>
+      <p class="lead">Envie seu arquivo e imprima com facilidade</p>
+      <section id="dropzone" class="dropzone" aria-label="Área para envio de arquivo" tabindex="0">
+        <input id="fileInput" type="file" accept=".pdf,.jpg,.jpeg,.png,.txt,application/pdf,image/jpeg,image/png,text/plain" hidden />
+        <div class="file-icon" aria-hidden="true">⇧</div>
+        <strong>Arraste seu arquivo para cá</strong>
+        <span>ou <button id="browseButton" type="button">clique para selecionar</button></span>
+        <small>PDF, JPG, PNG ou TXT · até 10 MB</small>
+      </section>
+      <section id="fileDetails" class="file-details" hidden aria-live="polite">
+        <div class="doc-icon">▤</div><div><strong id="fileName"></strong><span id="fileMeta"></span></div>
+        <button id="removeButton" class="icon-button" type="button" aria-label="Remover arquivo">×</button>
+      </section>
+      <button id="sendButton" class="send-button" type="button" hidden>Enviar para impressão <span aria-hidden="true">→</span></button>
+      <div id="progress" class="progress" hidden><div class="bar"><i></i></div><span>Enviando arquivo...</span></div>
+      <p id="status" class="status" role="status" aria-live="polite"></p>
+      <p class="privacy">Seu arquivo é enviado diretamente ao serviço de impressão configurado.</p>
+    </main>
+    <script src="app.js"></script>
+  </body>
+</html>
